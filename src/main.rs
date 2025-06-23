@@ -1,21 +1,7 @@
-//Variables, Functions, and Basic Operations in Rust
+fn main(){
+    // let mut x:i32 = 1;
 
-fn main() {
-    println!("Hello, world!");
-    greeting();
-    add();
-}
+    // x = x+2;
 
-
-fn greeting(){
-let name: &str = "Alice";
-println!("hello, welcome {}",name)
-}
-
-
-fn add(){
-    let a: i32 = 5;
-    let b:i32 = 10;
-    let sum:i32 = a+b;
-    println!("The sum of and {} is {}", a,b, sum)
+    // println!("The value of x is: {}", x);
 }
