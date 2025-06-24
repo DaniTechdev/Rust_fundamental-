@@ -2,234 +2,70 @@
 
 // use std::ops::RangeInclusive;
 // use std::ops::{Range, RangeInclusive};
-use std:: mem::size_of_val;
+// use std:: mem::size_of_val;
 
 
-#[allow(unused_variables)]
+// #[allow(unused_variables)]
 
 fn main(){
-    // let x:i32 = 40;
-    // let  y =5;
 
-    // let   y=x;
+//   let x = 5u32;
 
-    // let z:i32 = 10;
+//   let y: u32 = {
+//     let x_squared = x * x;
+//     let x_cude = x_squared * x;
 
-    // println!("success");
-    // println!("{y}");
+//     //This expression will be assigned to `y`
+//     x_cude + x_squared + x
+//   };
 
-    //assigning interger type directly
+//   let z: ()  ={
+//     //The semicolon suppressess this expression and `()` is assigned to `z`
+//     2 * x;
+//   };
 
-    // let v:u16 = 38_u8 as u16;
+//   println!("X is {:?}", x);
+//   println!("Y is {:?}", y);
+//   println!("Z is {:?}", z);
 
-    // println!("success");
 
+// let v:i32 = {
+//     let mut x: i32 =1;
+//     x +=2; //3
+//     x
+// };
 
+// assert_eq!(v,3);
 
-    //quiz
-    //modify assert_eq! t make it work
+// println!("success!");
 
-    // let x:u32 = 5;
-    // assert_eq!("u32".to_string(), type_of(&x));
+// let v: i32 ={
+//     let x: i32 = 3;
+//     x
+// };
 
-    // println!("success");
+// assert!(v==3);
+// println!("success");
 
 
+//
+// let s = sum(1,2);
 
-    //fill the blanks to make the code work
-    // assert_eq!(i8::MAX,127);
-    // assert_eq!(u8::MAX,255);
-  
-    // println!("success");
-
-
-    //fix error and panics to make it work
-
-    // let v1 = 251_u16 +8_u16;
-    // let v2:u16=  u16::checked_add(251,8 ).unwrap();
-
-    // println!("{},{}", v1,v2);
-
-
-    //modify assert to make it work
-
-    // let v = 1_024 + 0xff + 0o77 + 0b1111_1111; 
-    // assert!(v == 1597);
-
-
-    //Fill the blank to make it work
-
-    // let x = 1_000.000_1; //?
-    // let y:f32 = 0.12; //f32
-    // let z = 0.01_f64; //f64 
-
-    // assert_eq!(type_of(&x),"&f64".to_string());
-
-    // println!("Success");
-
-    //Make it work in two distint ways
-
-    // assert!(0.1_f32 + 0.2_f32 == 0.3_f32); // 0.1 + 0.2 = 0.30000000000002 so use float type to ocnver them to exact
-    // //or
-    // assert!(0.1 as f32 + 0.2 as f32 == 0.3 as f32);
-
-    // print!("Success");
-
-
-
-    //Tow goals: 1 Modify assert! to make it work 2. Make printlin! output: 97 to 122;
-
-    //  let mut sum:i32 = 0;
-    //  for i in -3..2 { //note end points in the range right side is excluded in Rust e.g 2
-    //     sum +=i;
-        
-    //  }
-
-    //  println!("sum is: {}", sum);
-
-    //  assert!(sum == -5);
-
-    //  for c in "a"..="z"{// in this case the right side of the range is included because we used the equality
-    //     println!("{}", c)
-    //  }
-
-    //  for c in 'a'..='z' { // Note the single quotes for characters
-    //     println!("{}", c as u8); // Convert character to u8 to print its ASCII value
-    // }
-
-
-
-     //Fill the planks
-
-
-    //  assert_eq!((1..5), Range{start:1, end:5});
-    //  assert_eq!((1..=5), RangeInclusive::new(1,5));
-
-    //  println!("success");
-
-    //Fill the blanks and fix the errors
-    
-    //Inter addition
-    // assert!(1_u32 + 2 == 3);
-
-    // //Integer subtraction
-    // assert!(1_i32 - 2i32 ==-1i32);
-
-    // assert!(1i8 - 2i8 == -1i8);
-
-    // assert!(3 * 50 == 150);//i32
-
-    // assert!(9.6 as f32 /3.2 as f32 == 3.0 as f32); //error! make it work
-
-    // assert!(24 % 5 == 4);
-    // println!("success");
-
-    // //short = circuting boolean logic
-    // assert!(true && false == false);
-    // // assert!(true );
-    // assert!(true || false ==true );
-    // assert!(!true == false);
-
-
-    // //Bitwise operations
-    // println!("0011 AND 0101 is {:04b}", 0b0011u32 & 0b0101); //here bit to bit then truth value
-    // println!("0011 OR 0101 is {:04b}", 0b0011u32 | 0b0101);
-    // println!("0011 XOR 0101 is {:04b}", 0b0011u32 ^ 0b0101);
-    // println!("1 << 5 is {}", 1u32 << 5);
-    // println!("0x80 >> 2 is 0x{:x}", 0x80u32 >> 2);
-    
-
-
-
-    //Char , Bool and Unit
-
-    //char
-
-    //make it work
-
-
-    let cl:char =  'a'; //4 byptes
-    // assert_eq!(size_of_val(&cl),1);
-
-    // println!("{}", size_of_val(&cl)); //output 4 means 4 bytes in memory
-
-    // let c2:char = '¬'; //4 bytes
-
-    // assert_eq!(size_of_val(&c2),4);
-
-    // println!("success");
-
-
-    //Make it work
-
-    // let cl:char = 'a'; //4 bytes  //node 
-    // print_char(cl)
-
-
-
-    //Make printLn! work
-
-// let _f:bool =  false;
-
-// let t = true;
-
-// if t {
-//     println!("Success");
-// }
-
-
-//Make it work
-
-
-// let f:bool = false;
-
-// let t =  true && true; //false
-
-// assert_eq!(t, f);
-
-// println!("Success");
-
-
-
-
-//Make it work, don't  `implicitly_ret_unit`!
-
-// let _v:() = (); // unit type hold no value and the memory byte it occupies it zero;
-
-// let v= (2,3); //tupple
-
-// assert_eq!(_v, implicitly_ret_unit());
-
-// println!("Success");
-
-
-//Modify `4 ` in the assert to make it work
-
-// let unit: ()=();
-// assert!(size_of_val(&unit)== 0);
+// assert_eq!(s,());
 
 // println!("success");
+
 
 }
 
 
-// fn implicitly_ret_unit () {
-//     println!("I will return a ()");
-// }
-
-// //Don't use this one;
-// fn explicitly_ret_unit() -> (){
-//     println!("I will return aa ()");
+// fn sum(x:i32, y:i32)-> (){ //this returns unit type
+//     x+y;
 // }
 
 
-// fn print_char(c:char){
-//     println!("The character is {}", c);
+// fn sum(x:i32, y:i32)-> i32{ ////this returns i32 type
+//     x+y
 // }
-  //Question
-    //Get the type ofa variable in Rust, returm a string representation of the type 
 
-    // fn type_of<T>(_: T) -> String {
-    //    format!("{}", std::any::type_name:: <T>()) //returns string of any valu passed as parameter e.g "i32"
-    // }
 

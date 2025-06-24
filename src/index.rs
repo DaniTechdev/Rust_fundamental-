@@ -1,57 +1,235 @@
+// use std::any::type_name_of_val;
+
+// use std::ops::RangeInclusive;
+// use std::ops::{Range, RangeInclusive};
+use std:: mem::size_of_val;
+
+
 #[allow(unused_variables)]
+
 fn main(){
-    // let mut x:i32 = 1;
+    // let x:i32 = 40;
+    // let  y =5;
 
-    // x = x+2;
+    // let   y=x;
 
-    // println!("The value of x is: {}", x);
+    // let z:i32 = 10;
+
+    // println!("success");
+    // println!("{y}");
+
+    //assigning interger type directly
+
+    // let v:u16 = 38_u8 as u16;
+
+    // println!("success");
 
 
-    // let x:i32=10;
-    // let y:i32 = 5;
+
+    //quiz
+    //modify assert_eq! t make it work
+
+    // let x:u32 = 5;
+    // assert_eq!("u32".to_string(), type_of(&x));
+
+    // println!("success");
 
 
-    // {
-    //     println!("The value of x is: {}, and the value of y is: {}", x, y);
+
+    //fill the blanks to make the code work
+    // assert_eq!(i8::MAX,127);
+    // assert_eq!(u8::MAX,255);
+  
+    // println!("success");
+
+
+    //fix error and panics to make it work
+
+    // let v1 = 251_u16 +8_u16;
+    // let v2:u16=  u16::checked_add(251,8 ).unwrap();
+
+    // println!("{},{}", v1,v2);
+
+
+    //modify assert to make it work
+
+    // let v = 1_024 + 0xff + 0o77 + 0b1111_1111; 
+    // assert!(v == 1597);
+
+
+    //Fill the blank to make it work
+
+    // let x = 1_000.000_1; //?
+    // let y:f32 = 0.12; //f32
+    // let z = 0.01_f64; //f64 
+
+    // assert_eq!(type_of(&x),"&f64".to_string());
+
+    // println!("Success");
+
+    //Make it work in two distint ways
+
+    // assert!(0.1_f32 + 0.2_f32 == 0.3_f32); // 0.1 + 0.2 = 0.30000000000002 so use float type to ocnver them to exact
+    // //or
+    // assert!(0.1 as f32 + 0.2 as f32 == 0.3 as f32);
+
+    // print!("Success");
+
+
+
+    //Tow goals: 1 Modify assert! to make it work 2. Make printlin! output: 97 to 122;
+
+    //  let mut sum:i32 = 0;
+    //  for i in -3..2 { //note end points in the range right side is excluded in Rust e.g 2
+    //     sum +=i;
+        
+    //  }
+
+    //  println!("sum is: {}", sum);
+
+    //  assert!(sum == -5);
+
+    //  for c in "a"..="z"{// in this case the right side of the range is included because we used the equality
+    //     println!("{}", c)
+    //  }
+
+    //  for c in 'a'..='z' { // Note the single quotes for characters
+    //     println!("{}", c as u8); // Convert character to u8 to print its ASCII value
     // }
 
-    // println!("The value of x is: {}, and the value of y is: {}", x, y);
-    // define_x()
 
 
-    // let  x:i32 = 10; // immutable variable
-
-    // {
-    //     let x= 12;
-    //     assert_eq!(x,12);
-    //     println!("The value of x in the inner scope is: {}", x);
-    // }
-
-    // assert_eq!(x,10);
-    // let x   = 42;
-    // println!("{}", x);
+     //Fill the planks
 
 
+    //  assert_eq!((1..5), Range{start:1, end:5});
+    //  assert_eq!((1..=5), RangeInclusive::new(1,5));
 
-    // let mut x:i32 = 1;
-    // x = 7;
-    // //shaodwing and re-binding
-    // // let x = x; // here will fail cos we initialise x and its by default immutable
+    //  println!("success");
 
-    //  x +=3;
+    //Fill the blanks and fix the errors
+    
+    //Inter addition
+    // assert!(1_u32 + 2 == 3);
 
-    // let y:i32 = 4;
+    // //Integer subtraction
+    // assert!(1_i32 - 2i32 ==-1i32);
 
-    // //shadowing
-    // let y = "I can also be bound to text";
-    // println!("Success")
+    // assert!(1i8 - 2i8 == -1i8);
+
+    // assert!(3 * 50 == 150);//i32
+
+    // assert!(9.6 as f32 /3.2 as f32 == 3.0 as f32); //error! make it work
+
+    // assert!(24 % 5 == 4);
+    // println!("success");
+
+    // //short = circuting boolean logic
+    // assert!(true && false == false);
+    // // assert!(true );
+    // assert!(true || false ==true );
+    // assert!(!true == false);
 
 
-    let x= 1;
+    // //Bitwise operations
+    // println!("0011 AND 0101 is {:04b}", 0b0011u32 & 0b0101); //here bit to bit then truth value
+    // println!("0011 OR 0101 is {:04b}", 0b0011u32 | 0b0101);
+    // println!("0011 XOR 0101 is {:04b}", 0b0011u32 ^ 0b0101);
+    // println!("1 << 5 is {}", 1u32 << 5);
+    // println!("0x80 >> 2 is 0x{:x}", 0x80u32 >> 2);
+    
+
+
+
+    //Char , Bool and Unit
+
+    //char
+
+    //make it work
+
+
+    let cl:char =  'a'; //4 byptes
+    // assert_eq!(size_of_val(&cl),1);
+
+    // println!("{}", size_of_val(&cl)); //output 4 means 4 bytes in memory
+
+    // let c2:char = '¬'; //4 bytes
+
+    // assert_eq!(size_of_val(&c2),4);
+
+    // println!("success");
+
+
+    //Make it work
+
+    // let cl:char = 'a'; //4 bytes  //node 
+    // print_char(cl)
+
+
+
+    //Make printLn! work
+
+// let _f:bool =  false;
+
+// let t = true;
+
+// if t {
+//     println!("Success");
+// }
+
+
+//Make it work
+
+
+// let f:bool = false;
+
+// let t =  true && true; //false
+
+// assert_eq!(t, f);
+
+// println!("Success");
+
+
+
+
+//Make it work, don't  `implicitly_ret_unit`!
+
+// let _v:() = (); // unit type hold no value and the memory byte it occupies it zero;
+
+// let v= (2,3); //tupple
+
+// assert_eq!(_v, implicitly_ret_unit());
+
+// println!("Success");
+
+
+//Modify `4 ` in the assert to make it work
+
+// let unit: ()=();
+// assert!(size_of_val(&unit)== 0);
+
+// println!("success");
+
 }
 
-// fn define_x(){
-//     let x:&str = "Hello";
-//     println!("{}, world", x);
 
+// fn implicitly_ret_unit () {
+//     println!("I will return a ()");
 // }
+
+// //Don't use this one;
+// fn explicitly_ret_unit() -> (){
+//     println!("I will return aa ()");
+// }
+
+
+// fn print_char(c:char){
+//     println!("The character is {}", c);
+// }
+  //Question
+    //Get the type ofa variable in Rust, returm a string representation of the type 
+
+    // fn type_of<T>(_: T) -> String {
+    //    format!("{}", std::any::type_name:: <T>()) //returns string of any valu passed as parameter e.g "i32"
+    // }
+
