@@ -2,6 +2,7 @@
 
 // use std::ops::RangeInclusive;
 // use std::ops::{Range, RangeInclusive};
+use std:: mem::size_of_val;
 
 
 #[allow(unused_variables)]
@@ -109,26 +110,122 @@ fn main(){
     //Fill the blanks and fix the errors
     
     //Inter addition
-    assert!(1_u32 + 2 == 3);
+    // assert!(1_u32 + 2 == 3);
 
-    //Integer subtraction
-    assert!(1_i32 - 2i32 ==-1i32);
+    // //Integer subtraction
+    // assert!(1_i32 - 2i32 ==-1i32);
 
-    assert!(1i8 - 2i8 == -1i8);
+    // assert!(1i8 - 2i8 == -1i8);
 
-    assert!(3 * 50 == 150);//i32
+    // assert!(3 * 50 == 150);//i32
 
-    assert!(9.6 as f32 /3.2 as f32 == 3.0 as f32); //error! make it work
+    // assert!(9.6 as f32 /3.2 as f32 == 3.0 as f32); //error! make it work
 
-    assert!(24 % 5 == 4);
-    println!("success");
+    // assert!(24 % 5 == 4);
+    // println!("success");
 
-    //short = circuting boolean logic
-    assert!(true && false == false);
-    // assert!(true );
+    // //short = circuting boolean logic
+    // assert!(true && false == false);
+    // // assert!(true );
+    // assert!(true || false ==true );
+    // assert!(!true == false);
+
+
+    // //Bitwise operations
+    // println!("0011 AND 0101 is {:04b}", 0b0011u32 & 0b0101); //here bit to bit then truth value
+    // println!("0011 OR 0101 is {:04b}", 0b0011u32 | 0b0101);
+    // println!("0011 XOR 0101 is {:04b}", 0b0011u32 ^ 0b0101);
+    // println!("1 << 5 is {}", 1u32 << 5);
+    // println!("0x80 >> 2 is 0x{:x}", 0x80u32 >> 2);
     
+
+
+
+    //Char , Bool and Unit
+
+    //char
+
+    //make it work
+
+
+    let cl:char =  'a'; //4 byptes
+    // assert_eq!(size_of_val(&cl),1);
+
+    // println!("{}", size_of_val(&cl)); //output 4 means 4 bytes in memory
+
+    // let c2:char = '¬'; //4 bytes
+
+    // assert_eq!(size_of_val(&c2),4);
+
+    // println!("success");
+
+
+    //Make it work
+
+    // let cl:char = 'a'; //4 bytes  //node 
+    // print_char(cl)
+
+
+
+    //Make printLn! work
+
+// let _f:bool =  false;
+
+// let t = true;
+
+// if t {
+//     println!("Success");
+// }
+
+
+//Make it work
+
+
+// let f:bool = false;
+
+// let t =  true && true; //false
+
+// assert_eq!(t, f);
+
+// println!("Success");
+
+
+
+
+//Make it work, don't  `implicitly_ret_unit`!
+
+// let _v:() = (); // unit type hold no value and the memory byte it occupies it zero;
+
+// let v= (2,3); //tupple
+
+// assert_eq!(_v, implicitly_ret_unit());
+
+// println!("Success");
+
+
+//Modify `4 ` in the assert to make it work
+
+let unit: ()=();
+assert!(size_of_val(&unit)== 0);
+
+println!("success");
+
 }
 
+
+// fn implicitly_ret_unit () {
+//     println!("I will return a ()");
+// }
+
+// //Don't use this one;
+// fn explicitly_ret_unit() -> (){
+//     println!("I will return aa ()");
+// }
+
+
+// fn print_char(c:char){
+//     println!("The character is {}", c);
+// }
   //Question
     //Get the type ofa variable in Rust, returm a string representation of the type 
 
