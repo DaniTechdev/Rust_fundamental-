@@ -55,9 +55,60 @@ fn main(){
 
 // println!("success");
 
+//Don't modify the following lines!
+// let (x,y) = (1,2); //tuple destructuring
+// let s: i32 = sum(x,y);
 
+// assert_eq!(s,3);
+// println!("success");
+
+
+// print();
+
+
+//Solve it in two ways
+//Don't let `println !` works
+
+// never_return();
+
+// println!("Failed");
+
+
+println!("success");
 }
 
+
+// fn get_option(tp:u8)-> Option<i32>{ //match is like switch statement
+//  match tp {
+//      1=> {
+//         //Todo
+//      }
+//      _ =>{
+//         //Todo
+//      };
+
+//      //Rather than returnng a None, we use diverging function instead
+
+//      never_return_fn()
+//  }
+// }
+
+// fn never_return_fn()-> !{
+//     panic!();
+// }
+
+// fn never_return() -> ! {
+//     //Implements this function, don't modify the fn signature
+//     panic!()
+// }
+
+// fn print()-> (){ //implicity the compiler wil
+//     println!("success");
+// }
+
+// fn sum(x:i32,y:i32)-> i32 { //this returns i32 type
+//     x+y
+// }
 
 // fn sum(x:i32, y:i32)-> (){ //this returns unit type
 //     x+y;
