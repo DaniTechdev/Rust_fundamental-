@@ -30,14 +30,51 @@ fn main(){
     // println!("{:?}, {:?}", x,y);
 
     //Mutability can be changed when ownership is transfered
-    let s= String::from("Hellow,");
+    // let s= String::from("Hellow,");
 
     //Modify this line only
-    let mut s1: String = s;
+    // let mut s1: String = s;
 
-    s1.push_str("world");
+    // s1.push_str("world");
 
-    println!("success");
+    // println!("success");
+
+
+    // let x: Box<i32> =Box::new(5); //Box is a smart pointer that allows you to allocate a stack variable to heap
+
+    // let mut y: Box<i32> = Box::new(1); //implement this line ,don't change other line;
+    // *y = 4;
+
+    // assert_eq!(*x,5); //since x and y are just holding addresses(pointers), we will access their values using * in the front.
+    // println!("success");
+
+
+// #[derive(Debug)]
+
+// struct Person{
+//     name:String,
+//     age:Box<u8>,
+// }
+
+
+// let person: Person = Person{
+//     name:String::from("Allice"),
+//     age:Box::new(20),
+// };
+
+// //`name` is moved out of person, but `age` is referenced
+// let Person {name,ref age}= person;
+
+
+// println!("The person's aage is {}", age);
+// println!("The peron's name is {}",name);
+
+
+//Erro! borrow of partially moved value: `person` partial move occurs
+//println!("the person struct is {:?}", perosn);
+
+//`person` cannot be used but `person.age` can be used as it is not moved
+
 
 }
 
