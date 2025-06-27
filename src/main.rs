@@ -76,6 +76,24 @@ fn main(){
 //`person` cannot be used but `person.age` can be used as it is not moved
 
 
+// let t: (String,String) = (String::from("hellow"), String::from("world"));
+
+// let _s:String= t.0;
+
+// //modify this line only , don't use `_s`
+// println!("{:?}", t.1)
+
+
+let t:(String,String) = (String::from("hello"), String::from("World"));
+
+//file the blanks
+
+let (s1,s2) = t.clone();
+
+println!("{:?},{:?},{:?}",s1,s2,t) //-> "Hello", "world", ("hello","world");
+
+
+
 }
 
 
