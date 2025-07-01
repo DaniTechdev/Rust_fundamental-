@@ -1,3 +1,5 @@
 fn main(){
-//Struct
+    //Tuple Structs
+
+    
 }
