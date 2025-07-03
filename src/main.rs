@@ -1,12 +1,7 @@
 fn main(){
-    //enum option
+    //matches! looks like match but can be something different
 
-    enum Option<T>{
-        None,
-        Some(T),
-    }
+    let alphabets = ['a','E','Z','0','X','9','Y'];
 
-
+    //fill 
 }
-
-fn plus
