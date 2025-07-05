@@ -1,31 +1,52 @@
-    //Generics
+use std::ops::Add;
 
-    struct A;  //Concrete type `A`
-    struct S(A); //Concrete type `S`
-    struct SGen<T>(T); //Generic type `SGen`
+// Implement the generic function below
+// fn sum<T: Add<Output = T>>(a: T, b: T) -> T {
+//     a + b
+// }
 
 
-    fn reg_fn(_s:S) {}
+// struct Point<T>{
+//     x:T,
+//     y:T
+// }
 
-    fn gen_spec_t(_s:SGen<A>) {}
 
-    fn gen_spec_i32(_s:SGen(i32)){}
+// struct Point<T,U>{
+//     x:T,
+//     y:U
+// }
 
-    fn generic<T>(_s:SGen<T>) {}
 
-    fn main(){
-        //Using the none-generic functions
 
-        reg_fn(S('A')); //Concrete type
 
-        gen_spec_t(SGen(A)); //Implictly specified type parameter `A`
-        gen_spec_i32(SGen(7)); //Implictly specified type parameter `i32`
+fn main() {
 
-        //Explictly specified type parameter `char` to `generic()`.
-        generic::<char>(SGen('A'));
+    // //Don't modify this code
+    // let p: Point<i32, String> = Point{x:5, y:"hello".to_string()};
 
-        //Implictly specified type parameter `char` to `generic()`
-        generic(SGen(7));
 
-        println!("Success")
-    }
+    // println!("Success");
+
+    // assert_eq!(5, sum(2i8, 3i8));
+    // assert_eq!(50, sum(20, 30)); // i32
+    // assert_eq!(2.46, sum(1.23, 1.23)); // f64
+
+    // println!("Success!");
+
+
+    // //Implement struct Point to make it work.
+
+    // let integer: Point<i32> = Point{x:5,y:10};
+
+    // let float: Point<f64> = Point{x:1.0,y:4.0};
+
+    // println!("success");
+
+
+
+    //Modify this struct to make the code work
+
+
+    
+}
