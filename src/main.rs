@@ -1,30 +1,57 @@
+//traits
+
+//exercise1
+
+//Don't modify the code in `main`.
+
+trait Hello {
+    //Default implementation of the method
+    fn say_hi(&self) -> String{
+        String::from("Hi")
+    } 
+
+    fn say_something(&self)-> String;
+}
 
 
-//<T, const N:usize> is part of the struct type, it means Array<i32,3> and Array<i32,4> are different types
 
+struct Student {}
 
-struct Array<T, const N:usize>{
-    data:[T;N] //[f64;2]
+impl Hello for Student  {
+
+    fn say_hi(&self)->String{
+        String::from("hi")
+    }
+
+    fn say_something(&self)-> String {
+        String::from("I aam a good student")
+    }
+}
+
+struct Teacher {}
+
+impl  Hello for Teacher {
+    fn say_hi(&self)->String{
+        String::from("Hi,I am your new teacher")
+    }
+
+    fn say_something(&self)-> String {
+        String::from("I am not a bad teacher")
+    }
 }
 
 
 fn main(){
-    let arrays:[Array<i32,3>; 3]= [
-        Array{
-            data: [1,2,3],
-        },
-        Array{
-            data: [1,2,3],
-        },
-        Array{
-            data:[1,2,3],
-        }
-    ];
 
+let s:Student = Student {};
+assert_eq!(s.say_hi(),"hi");
+assert_eq!(s.say_something(),"I aam a good student");
 
-    let floats : [Array<f64,2>;3]=[
-        Array{ data:[3.2,4.5]},
-        Array{ data:[2.3,4.5]},
-        Array{data:[1.1,1.0]},
-    ];
+let t: Teacher = Teacher {};
+
+assert_eq!(t.say_hi(),"Hi,I am your new teacher" );
+assert_eq!(t.say_something(),"I am not a bad teacher");
+
+println!("Success")
+    
 }
