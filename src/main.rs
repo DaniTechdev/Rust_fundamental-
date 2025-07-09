@@ -1,47 +1,33 @@
-// &dyn and Box<dyn>
+trait Foo {
+    fn method(&self) -> String;
+}
 
+impl Foo for u8 {
+    fn method(&self) -> String{ format!("u8:{}", *self) }
+    
+}
 
-
-//Fill in the blanks
-
-trait Draw {
-    fn draw(&self) ->String;
+impl Foo for String {
+    fn method(&self) -> String { format!("String:{}", self) }
 }
 
 
-impl Draw for u8{
-    fn draw(&self) ->String {
-        format!("u8: {}", self)
-    }
+//Implement below with generics
+
+fn static_dispatch<T: Foo>(a:T){
+    a.method();
 }
 
 
-impl Draw for f64 {
-    fn draw(&self) ->String {
-        format!("f64: {}", self)
-    }
+fn dynamic_dispatch(a:&dyn Foo){
+    a.method();
 }
 
 
 fn main(){
-    let x: f64 = 1.1f64;
-    let y: u8 = 8u8;
+    let x: u8 = 5u8;
+    let y: String = "Hello".to_string();
 
-
-    //draw x
-    draw_with_box(Box::new(x));
-
-    //draw y
-    draw_with_ref(&y);
-
-    println!("success");
-
-}
-
-fn draw_with_box(x:Box<dyn Draw>){
-    x.draw();
-}
-
-fn draw_with_ref(x:&dyn Draw){
-    x.draw();
+    static_dispatch(x);
+    dynamic_dispatch(&y);
 }
