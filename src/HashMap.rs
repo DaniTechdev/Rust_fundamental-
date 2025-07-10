@@ -1,7 +1,9 @@
 //Fill in the blanks and Fix errors
+
 use std::collections::HashMap;
 
 fn main(){
+    
     let mut scores:HashMap<&str, i32> = HashMap::new();
     scores.insert("Sunface", 98);
     scores.insert("Daniel", 95);
@@ -29,5 +31,6 @@ fn main(){
         println!("The score of {} is {}", name, score);
         
     }
+
 
 }
