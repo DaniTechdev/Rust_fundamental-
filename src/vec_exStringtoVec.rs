@@ -23,14 +23,14 @@ fn main(){
     assert_eq!(v1,v2);
 
     //impl <`__> from <&` _ str> for Vec
-    let s: String = "hello".to_string();
+    let s:&str = "hello";
     let v3: Vec<u8> = Vec::from(s);
 
     assert_eq!(v2,v3);
 
     //Iterators can be collected into vectors
     let v4:Vec<i32> = [0;10].into_iter().collect();
-    assert_eq!(v4, vec![0;10]);
+    assert_eq!(v4, vec![0;10]); //[0,0,0...,0]
 
     println!("success");
 
