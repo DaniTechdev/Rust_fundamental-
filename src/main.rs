@@ -1,3 +1,5 @@
+#[allow(overflowing_literals)]
+
 fn main(){
     assert_eq!(u8::MAX, 255);
     //The max of u8 is 255 as shown above.
