@@ -16,7 +16,6 @@ fn main (){
 
     //Insert a key using function that provides a new value only if it
     //does not already exist
-
     player_stats.entry("health").or_insert_with(random_stat_buff);
     assert_eq!(player_stats["health"], 100);
 
