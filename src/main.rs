@@ -1,22 +1,34 @@
-// TryFrom and TryInto are included in `std::prelude` , so there is no need to introduce
-// use std::convert::TryInto;
+#[derive(Debug,PartialEq)]
+struct EvenNum(i32);
+
+impl TryFrom<i32> for EvenNum{
+
+    type Error = ();
+
+    fn try_from(value:i32)-> Result<Self,Self::Error>{
+        if value% 2 == 0{
+            Ok(EvenNum(value))
+        }else{
+            Err(())
+        }
+    }
+}
+
 
 fn main(){
+    
+    assert_eq(EvenNum::try_from(8), Ok(EvenNum(8)));
+    assert_eq(EvenNum::try_from(5),Err(()));
 
-    let n:i16 = 256;
 
-    //Into trait has a method `into`,
-    //hence TryInto has a method, tryInto
+    //Fill in the blanks
+    let result:Result<EvenNum,()> = 8i32.try_into();
+    assert_eq(result,Ok(EvenNum(8)));
 
-    let n: u8 = match n.try_into(){
-        Ok(n) => n,
-        Err(e)=> {
-            println!("there is an error when comverting: {:?}, but we catch it", e.to_string() );
-            0
-        }
-    };
+    let result:Result<EvenNum,()> = 5i32.try_into();
+    assert_eq(result, Err(()));
 
-      assert_eq!(n,0);
+    assert_eq("Success");
 
-        println!("Success");
+    
 }
