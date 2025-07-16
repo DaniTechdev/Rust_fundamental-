@@ -1,19 +1,20 @@
-//Fill in the blank to display the whole call stack
-//Tip:you can find the clue in the default panic info
+//Fill in the blanks and fix the errors
+use std::num::ParseIntError;
 
+fn multiply(nl_str:&str, n2_str:&str)-> Result<i32, ParseIntError>{
+    let n1: Result<i32, ParseIntError> = nl_str.parse::<i32>(); //Ok(10)
+    let n2: Result<i32, ParseIntError> = n2_str.parse::<i32>(); //Ok(2)
 
-fn divide(x:f32, y:f32) -> Result<f32,&'static str>{
-    if y == 0.0 {
-        return Err("Division by zero");
-    }
-    Ok(x/y)
+    Ok(n1.unwrap()*n2.unwrap()) //Ok(20)
 }
 
 fn main(){
-    let result: Result<f32, &'static str> = divide(10.0, 2.0);
+    let result: Result<i32, ParseIntError> = multiply("10", "2");
 
-    match result {
-        Ok(val) => println!("Result: {}", val),
-        Err(msg)=> println!("Error: {}",msg)
-    }
+    assert_eq!(result,Ok(20));
+
+    let result: Result<i32, ParseIntError> = multiply("4`", "2");
+    assert_eq!(result.unwrap(),8);
+
+    println!("Success");
 }
