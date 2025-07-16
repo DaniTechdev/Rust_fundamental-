@@ -7,7 +7,7 @@ fn main(){
     let ele: i32 = v[2];
 
     //Unwrap may panic when get return a None
-    let ele = v.get(1).unwrap(); //Some(2) -> 2 Note: unwrap will unwrap the inner value and its 2
+    let ele:&i32 = v.get(1).unwrap(); //Some(2) -> 2 Note: unwrap will unwrap the inner value and its 2
 
     //Sometimes , the compiler is unable to find the overflow errors for you in compile time , so a panic will occur
 
