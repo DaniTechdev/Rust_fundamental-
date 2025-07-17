@@ -1,14 +1,42 @@
-use std::num::ParseIntError;
+use std::{num::ParseIntError, result};
 
-//Fill in the blank in two ways: map and_then
+//with the return type rewritten, we use pattern matching without `unwrap()`
+//but it's so verbose...
 
-fn add_two(n_str:&str)-> Result<i32,ParseIntError>{
-    // n_str.parse::<i32>().map(|n| n+2 ) or  and_then returns a Ok(value) but map returns value directly
-    n_str.parse::<i32>().and_then(|n| Ok(n +2) )
+fn multiply(n1_str:&str, n2_str:&str) -> Result<i32, ParseIntError>{
+    match n1_str.parse::<i32>(){
+        Ok(n1)=>{
+            match n2_str.parse::<i32>() {
+                Ok(n2)=> {
+                    Ok(n1 * n2)
+                },
+                Err(e)=> Err(e)
+            }
+        },
+        Err(e)=> Err(e),
+    }
 }
 
 
-fn main(){
-    assert_eq!(add_two("4").unwrap(), 6);
-    println!("Success");
+//Rewritting `multiply` to make it succinct
+//You should use BOTH of `and_then` and `maap` here.
+
+fn multiply1(n1_str:&str, n2_str:&str) -> Result<i32, ParseIntError>{
+    n1_str.parse::<i32>().and_then(|n1| n2_str.parse::<i32>().map(|n2| n1*n2 ) )
+}
+
+fn print(result:Result<i32,ParseIntError>) {
+    match result {
+        Ok(n)=> println!("n is {} ", n),
+        Err(e)=> println!("Error: {}",e)
+        
+    }
+}
+
+fn main() {
+    //This still presents a reasonable answer
+
+    let twenty = multiply1("10", "2");
+
+    print(twenty);
 }
