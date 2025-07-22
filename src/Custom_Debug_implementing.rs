@@ -78,3 +78,14 @@ fn main(){
 
     println!("Now {:?} will print!", Deep(Structure(7)));
 }
+
+
+fn main(){
+    let example_closure =  |x: String| ->String {x};
+
+    let s: String = example_closure(String::from("hello"));
+
+    //make it work only change the following line
+
+     let n: String = example_closure(5.to_string());
+}
